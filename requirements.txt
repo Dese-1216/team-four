@@ -1,0 +1,12 @@
+jupyterlab
+pandas
+numpy
+scikit-learn>=1.2
+matplotlib
+seaborn
+plotly
+kaleido
+joblib
+streamlit
+xgboost
+lightgbm
