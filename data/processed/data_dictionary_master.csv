@@ -1,0 +1,23 @@
+column,dtype,source_file,how_derived
+plot_id,object,crop_yield_train.csv (cleaned),cleaned raw column
+region,object,crop_yield_train.csv (cleaned),cleaned raw column
+crop_type,object,crop_yield_train.csv (cleaned),cleaned raw column
+survey_year,int64,crop_yield_train.csv (cleaned),cleaned raw column
+planting_month,object,crop_yield_train.csv (cleaned),cleaned raw column
+altitude_m,float64,crop_yield_train.csv (cleaned),cleaned raw column
+rainfall_mm_season,float64,crop_yield_train.csv (cleaned),cleaned raw column
+farm_size_ha,float64,crop_yield_train.csv (cleaned),cleaned raw column
+fertilizer_kg_per_ha,float64,crop_yield_train.csv (cleaned),cleaned raw column
+improved_seed_used,int64,crop_yield_train.csv (cleaned),cleaned raw column
+pest_disease_flag,float64,crop_yield_train.csv (cleaned),cleaned raw column
+soil_quality_index,float64,crop_yield_train.csv (cleaned),cleaned raw column
+labor_days_per_ha,float64,crop_yield_train.csv (cleaned),cleaned raw column
+distance_to_market_km,float64,crop_yield_train.csv (cleaned),cleaned raw column
+yield_tons_per_ha,float64,crop_yield_train.csv (cleaned),cleaned raw column
+season_avg_temp_c,float64,regional_weather.csv,aggregated over the plot growing-season window
+season_rainfall_mm_total,float64,regional_weather.csv,aggregated over the plot growing-season window
+season_extreme_heat_days,float64,regional_weather.csv,aggregated over the plot growing-season window
+season_months_matched,int64,regional_weather.csv,aggregated over the plot growing-season window
+temp_deviation_from_region_avg,float64,regional_weather.csv,season_avg_temp_c minus that region overall mean avg_temp_c
+fertilizer_x_improved_seed,float64,crop_yield_train.csv,fertilizer_kg_per_ha times improved_seed_used
+planting_month_num,int64,crop_yield_train.csv,planting_month mapped to 1 through 12

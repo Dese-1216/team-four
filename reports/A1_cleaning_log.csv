@@ -1,0 +1,11 @@
+file,column(s),issue_type,rows_affected,pct_affected,fix,why
+crop_yield_train.csv,region,inconsistent casing and whitespace,14164,93.86,strip and lowercase to the canonical 5-region set,"same region written as OROMIA, Oromia, oromia, and a trailing-space variant"
+crop_yield_train.csv,crop_type,inconsistent casing/whitespace plus a spelling variant (Tef),2982,19.76,"strip and lowercase, then map tef to teff",an abbreviated spelling appears alongside the full crop name
+crop_yield_train.csv,pest_disease_flag,sentinel missing value (-999),300,1.99,"convert -999 to NaN, impute with the train mode",a binary flag cannot legitimately be -999
+crop_yield_train.csv,labor_days_per_ha,sentinel missing value (-999.0),488,3.23,"convert -999.0 to NaN, impute with train median by crop_type",negative labor-days is impossible; this column uses a different sentinel than the flag column
+crop_yield_train.csv,"rainfall_mm_season, fertilizer_kg_per_ha, soil_quality_index",true blanks (missing values),1752,11.61,"impute with the train median, grouped by crop_type or region where sensible",model features cannot contain missing values
+crop_yield_train.csv,fertilizer_kg_per_ha,extreme outliers (up to about 899 kg/ha),143,0.95,cap at the train 99th percentile,implausible for smallholder plots and would distort the model
+regional_weather.csv,region,"abbreviations mixed with full names, inconsistent casing",19,8.19,"strip and lowercase, then map each abbreviation to its full canonical name","a different inconsistency pattern than the plot table, so fixing one table does not fix the other"
+regional_weather.csv,"region, year, month",duplicate and conflicting readings,7,3.02,drop the 1 exact duplicate row; average the 6 region-year-month keys that had 2 differing readings,a many-to-one join requires exactly one weather row per key
+market_prices.csv,price_birr_per_quintal,"unit mix-up, about 100x too small on a few rows",4,4.0,multiply flagged rows (price below 500) by 100,"those values cluster about 100x below the rest of their crops price range, consistent with birr-per-kg instead of birr-per-quintal"
+market_prices.csv,price_birr_per_quintal,missing values,4,4.0,impute with the median price for that crop,every crop/region/year needs a price for the revenue calculations in B and E

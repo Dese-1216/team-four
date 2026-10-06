@@ -1,0 +1,7 @@
+name,formula,source_columns,why
+season_avg_temp_c,mean(avg_temp_c) over the growing-season window,regional_weather.csv: avg_temp_c,temperature during growth is a direct driver of yield
+season_rainfall_mm_total,sum(monthly_rainfall_mm) over the growing-season window,regional_weather.csv: monthly_rainfall_mm,water availability during growth drives yield
+season_extreme_heat_days,sum(extreme_heat_days) over the growing-season window,regional_weather.csv: extreme_heat_days,heat stress during growth can depress yield
+temp_deviation_from_region_avg,season_avg_temp_c minus that region overall mean avg_temp_c,regional_weather.csv: avg_temp_c,captures an unusually hot or cool season relative to that region normal climate
+fertilizer_x_improved_seed,fertilizer_kg_per_ha times improved_seed_used,"crop_yield_train.csv: fertilizer_kg_per_ha, improved_seed_used","improved seed is believed to respond better to fertilizer, an interaction effect"
+planting_month_num,planting_month mapped to 1 through 12,crop_yield_train.csv: planting_month,gives the model a numeric timing signal in addition to the raw category

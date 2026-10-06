@@ -1,0 +1,33 @@
+{
+  "fertilizer_cap": 136.04985626055972,
+  "pest_disease_mode": 0.0,
+  "global_medians": {
+    "fertilizer_kg_per_ha": 33.827426498590675,
+    "labor_days_per_ha": 45.035397140739605,
+    "rainfall_mm_season": 848.7638275883199,
+    "soil_quality_index": 0.565048587112126
+  },
+  "group_medians": {
+    "fertilizer_kg_per_ha": {
+      "barley": 32.93231103254847,
+      "maize": 33.954060352275675,
+      "sorghum": 33.36369427014547,
+      "teff": 34.56964143017646,
+      "wheat": 33.96083323928548
+    },
+    "labor_days_per_ha": {
+      "barley": 44.62059896111579,
+      "maize": 44.622617489345814,
+      "sorghum": 45.06929763435292,
+      "teff": 45.48327339382004,
+      "wheat": 45.26480664675503
+    },
+    "rainfall_mm_season": {
+      "amhara": 849.4387305074305,
+      "oromia": 851.6663912832919,
+      "snnpr": 844.8266900244428,
+      "somali": 848.9030209721092,
+      "tigray": 850.406671447005
+    }
+  }
+}
