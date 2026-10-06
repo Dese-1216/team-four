@@ -1,12 +1,9 @@
+# After your environment works, run `pip freeze > requirements.txt` once to replace
+# this with exact pinned versions (G3 asks for versions, not just names).
 jupyterlab
 pandas
 numpy
 scikit-learn>=1.2
 matplotlib
-seaborn
-plotly
-kaleido
 joblib
 streamlit
-xgboost
-lightgbm
